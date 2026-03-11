@@ -1,0 +1,13 @@
+QR1: List Types and Initialization
+​Question: Explain the difference between List<int> and List<dynamic>. Why did we initialize our "running maximum" to the first element of the list instead of zero?
+​Answer: * Difference: List<int> is a type-safe collection that strictly allows only integer values. This prevents runtime errors and allows the compiler to optimize performance. List<dynamic> allows elements of any type (String, int, bool, etc.) within the same list, which sacrifices type safety and makes the code more prone to crashes.
+​Initialization: We initialize the "running maximum" to the first element (numbers[0]) to ensure the function works correctly with lists containing only negative numbers. If we initialized to 0 and the list was [-10, -5, -20], the function would incorrectly return 0 as the maximum, even though 0 was never in the list.
+​QR2: Software Design & Code Reuse
+​Question: In Task 1, why is it better for calculateAverage() to call calculateSum() rather than writing a new loop to add the numbers?
+​Answer: This follows the DRY (Don't Repeat Yourself) principle. By calling calculateSum(), we reduce code duplication. If we ever need to change the logic of how numbers are totaled (for example, adding a filter), we only have to change it in one place rather than two. This makes the code easier to maintain and reduces the chance of introducing bugs.
+​QR3: Exception Handling in User Experience
+​Question: In Task 2, why is it important to use a try-catch block when calling the division method? What would happen to the user experience if we didn't?
+​Answer: Division by zero is a runtime error that would normally cause the entire program to crash (terminate unexpectedly). By using a try-catch block, we "catch" the error and handle it gracefully by printing a helpful error message to the user. This keeps the application running, allowing the user to perform other calculations instead of the app simply closing or freezing.
+​QR4: The Asynchronous Event Loop
+​Question: Explain what happens during the 1.5-second await Future.delayed period. Does the program "freeze"?
+​Answer: During the await period, the program does not freeze. Instead, the Dart Event Loop "pauses" that specific function and moves it to the background, allowing the CPU to handle other tasks (like UI animations or other user inputs) if they were present. The function only resumes once the timer finishes. This is crucial in modern apps to ensure the user interface remains responsive while waiting for data from a database or API.
