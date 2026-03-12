@@ -44,6 +44,28 @@ double calculateAverage(List<int> numbers) {
   return totalSum / numbers.length;
 }
 
+/// Counts the number of positive integers in the list.
+int countPositiveNumbers(List<int> numbers) {
+  int count = 0;
+  for (int num in numbers) {
+    if (num > 0) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/// Returns a new list containing only the even numbers from the original list.
+List<int> findEvenNumbers(List<int> numbers) {
+  final evenNumbers = <int>[];
+  for (int num in numbers) {
+    if (num % 2 == 0) {
+      evenNumbers.add(num);
+    }
+  }
+  return evenNumbers;
+}
+
 void main() {
   final numbers = [15, -5, 8, 20, -3, 10];
   print('Analyzing the list: $numbers');
@@ -62,6 +84,12 @@ void main() {
   final average = calculateAverage(numbers);
   print('Average: ${average.toStringAsFixed(2)}');
 
+  final positiveCount = countPositiveNumbers(numbers);
+  print('Positive Numbers Count: $positiveCount');
+
+  final evenNumbers = findEvenNumbers(numbers);
+  print('Even Numbers: $evenNumbers');
+
   print('-------------------------');
   print('Testing with an empty list:');
   // Demonstrate error handling for an empty list
@@ -73,3 +101,4 @@ void main() {
     );
   }
 }
+
