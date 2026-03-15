@@ -12,7 +12,8 @@ Task 1: Number Analysis App
 
 ​Functions: Includes findMax, findMin, calculateSum, and calculateAverage.
 ​Design Principle: Reuses calculateSum inside calculateAverage to maintain DRY (Don't Repeat Yourself) code standards.
-​Task 2: Async Calculator App
+​
+Task 2: Async Calculator App
 ​OOP Design: Utilizes a Calculator class with a typed constructor and modular arithmetic methods.
 ​Error Handling: Implements a try-catch block to gracefully handle ArgumentError specifically for division by zero.
 ​Asynchrony: Uses Future.delayed with a duration of 1.5 seconds to simulate real-world data processing delays.
